@@ -54,7 +54,8 @@ function getTriangle(side1, side2, side3) {
 			console.log(error);
 		}
 		finally {
-			return object.getArea(); 
+			return object.getArea();
+			return object.getPerimeter();
 		}
 }
 
