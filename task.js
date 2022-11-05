@@ -1,23 +1,21 @@
 //Задание №1
 
 function parseCount(count) {
-	if(Number.parseInt(count) === NaN) {
+	let _count = Number.parseInt(count);
+	if(Number.isNan(_count)) {
 		throw new Error('Невалидное значение!');
-		} 
-	return Number.parseInt(count);
-}
+	} 
+	else {
+		return _count;
+	} 
+} 
 
 function validateCount(count) {
 	try {
-		console.log('Внутри try');
 		return parseCount(count);
 	}
-	catch(error) {                                 //По чему не выводится сообщение из блока catch?
-		console.log(error);
-		console.log('Ошибка перехвачена!');
-	}
-	finally {
-		console.log('Внутри finally');
+	catch(error) {                                
+		return error;
 	}
 }
 
