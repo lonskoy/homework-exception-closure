@@ -1,13 +1,11 @@
 //Задание №1
 
 function parseCount(count) {
-	let _count = Number.parseInt(count);
-	if(Number.isNan(_count)) {
+	let countArg = Number.parseInt(count);
+	if(Number.isNaN(countArg)) {
 		throw new Error('Невалидное значение!');
 	} 
-	else {
-		return _count;
-	} 
+	return countArg;
 } 
 
 function validateCount(count) {
@@ -29,6 +27,9 @@ class Triangle {
 	}
 
 	getPerimeter() {
+		if(this.side1 + this.side2 < this.side3 || this.side1 + this.side3 < this.side2 || this.side2 + this.side3 < this.side1) {
+			throw new Error('Треугольник с такими сторонами не существует');
+		}
 		let p = this.side1 + this.side2 + this.side3;
 		return p;
 	}
@@ -42,11 +43,10 @@ class Triangle {
 }
 
 function getTriangle(side1, side2, side3) {
-		let object = new Triangle(side1, side2, side3);
+		
 		try {
-			if(side1 + side2 < side3) {
-				throw new Error('Треугольник с такими сторонами не существует');
-			}
+			let object = new Triangle(side1, side2, side3);
+			console.log('Объект создан');
 		}
 		catch(error) {
 			console.log(error);
