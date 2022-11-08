@@ -44,14 +44,14 @@ class Triangle {
 
 function getTriangle(side1, side2, side3) {
 	let objectError;
-		objectError.getArea = () => alert('Ошибка! Треугольник не существует');
-	   objectError.getPerimeter = () => alert('Ошибка! Треугольник не существует');
-	}
-		
+	objectError.getArea = () => alert('Ошибка! Треугольник не существует');
+	objectError.getPerimeter = () => alert('Ошибка! Треугольник не существует');
+	   
 		try {
 			let object = new Triangle(side1, side2, side3);
 			return object;
 		}
+
 		catch(error) {
 			return error;
 			objectError.getArea();
