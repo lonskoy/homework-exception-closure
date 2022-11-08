@@ -24,14 +24,14 @@ class Triangle {
 		this.side1 = side1;
 		this.side2 = side2;
 		this.side3 = side3;
-	}
-
-	getPerimeter() {
 		if(this.side1 + this.side2 < this.side3 || this.side1 + this.side3 < this.side2 || this.side2 + this.side3 < this.side1) {
 			throw new Error('Треугольник с такими сторонами не существует');
 		}
-		let p = this.side1 + this.side2 + this.side3;
-		return p;
+	}
+
+	getPerimeter() {
+		let p;
+		return p = this.side1 + this.side2 + this.side3;
 	}
 
 	getArea() {
@@ -43,17 +43,19 @@ class Triangle {
 }
 
 function getTriangle(side1, side2, side3) {
+	let objectError;
+		objectError.getArea = () => alert('Ошибка! Треугольник не существует');
+	   objectError.getPerimeter = () => alert('Ошибка! Треугольник не существует');
+	}
 		
 		try {
 			let object = new Triangle(side1, side2, side3);
-			console.log('Объект создан');
+			return object;
 		}
 		catch(error) {
-			console.log(error);
-		}
-		finally {
-			return object.getArea();
-			return object.getPerimeter();
+			return error;
+			objectError.getArea();
+			objectError.getPerimeter();
 		}
 }
 
